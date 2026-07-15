@@ -1,4 +1,3 @@
-
 locations = ["Japan", "American", "France", "England", "Swedish"]
 print("Five places in the world I want to visit:")
 print(locations)
@@ -12,7 +11,6 @@ print(locations)
 print("Reverse sorted List:")
 print(sorted(locations, reverse= True))
 
-
 print("Reverse List:")
 locations.reverse()
 print(locations)
@@ -20,7 +18,6 @@ print(locations)
 print("Reverse List again:")
 locations.reverse()
 print(locations)
-
 
 print("Sort List:")
 locations.sort()
