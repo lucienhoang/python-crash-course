@@ -44,5 +44,5 @@ print("Here is the reverse list:")
 lists.reverse()
 print(lists)
 
-# lenth
+# length
 print("Total length of the list: " + str(len(lists)))
