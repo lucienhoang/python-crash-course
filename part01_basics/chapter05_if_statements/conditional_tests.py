@@ -15,3 +15,7 @@ if "smile" in dreams:
 
 if "give up" not in dreams:
     print("\nI don't give up!")
+
+money = 100000
+if money > 20000:
+    print("Today is a good day. I want to eat delecious foods hehehe!")
