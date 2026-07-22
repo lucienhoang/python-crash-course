@@ -23,6 +23,3 @@ if requested_toppings:  # return true if requested_toppings is not null
     print("\nFinished making your pizza!")
 else:
     print("Are you sure you want a plain pizza?")
-
-
-# test
