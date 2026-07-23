@@ -13,6 +13,7 @@ print(locations)
 
 print("Reverse sorted List:")
 print(sorted(locations, reverse=True))
+# ['Swedish', 'Japan', 'France', 'England', 'American']
 
 print("Reverse List:")
 locations.reverse()
