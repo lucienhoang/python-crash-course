@@ -4,3 +4,8 @@ print("I want a " + my_list[0])
 print("I want to buy a " + my_list[2])
 print("I want to open a " + my_list[1])
 print("I want to make " + my_list[-1])
+
+# I want a pretty house
+# I want to buy a Honda motorcycle
+# I want to open a small coffee shop
+# I want to make my wife smile
