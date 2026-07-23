@@ -17,3 +17,4 @@ elif age >= 65:  # else:
     price = 6
 
 print("Your cost is $" + str(price) + ".")
+# Your cost is $6.

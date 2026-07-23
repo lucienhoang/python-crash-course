@@ -12,3 +12,5 @@ elif age < 65:
     print("You are an adult")
 elif age >= 65:
     print("You are an elder")
+
+# You are an elder

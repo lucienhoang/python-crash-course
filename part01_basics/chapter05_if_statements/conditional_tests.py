@@ -19,3 +19,14 @@ if "give up" not in dreams:
 money = 100000
 if money > 20000:
     print("Today is a good day. I want to eat delecious foods hehehe!")
+
+# You will live a fulfil life!
+# Don't you worry man, you will do it!
+
+# I will make it ??
+# True
+
+# Hehehe
+
+# I don't give up!
+# Today is a good day. I want to eat delecious foods hehehe!
