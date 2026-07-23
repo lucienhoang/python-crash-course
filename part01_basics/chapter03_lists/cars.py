@@ -11,6 +11,8 @@ cars = ["bmw", "audi", "toyota", "subaru"]
 # Sorting a List with the sorted() Function
 print("\nHere is the sorted list:")
 print(sorted(cars))
+# ["audi", "bmw", "subaru", "toyota"]
 
 print("\nHere is the original list again:")
 print(cars)
+# ['bmw', 'audi', 'toyota', 'subaru']
