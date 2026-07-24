@@ -11,8 +11,10 @@ print(alien_0["point"])
 # Accessing value in Dictionary
 new_points = alien_0["point"]
 print("You just earned " + str(new_points) + " points for shooting down the alien!")
+# You just earned 5 points for shooting down the alien!
 
 # Adding new key-value pairs
 alien_0["x_position"] = 0
 alien_0["y_position"] = 25
 print(alien_0)
+# {'color': 'green', 'point': 5, 'x_position': 0, 'y_position': 25}
