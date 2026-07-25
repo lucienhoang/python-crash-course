@@ -27,3 +27,9 @@ for name in favorite_languages:
 # Dung
 #  Hi Dung, I see your favorite languages is Java.
 # Mr. Bong Bang
+
+if "erin" not in favorite_languages.keys():
+    print("\nErin, please take out the poll!")
+
+# Erin, please take out the poll!
+# favorite_languages.keys() return a list of all the keys
