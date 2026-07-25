@@ -8,6 +8,15 @@ favorite_languages = {
 print("Jen favorite's language is " + favorite_languages["jen"].title() + ".")
 # Jen favorite's language is Python.
 
+# Looping through all key-value pairs
+for name, language in favorite_languages.items():
+    print(name.title() + "'s favorite language is: " + language.title() + ".")
+
+# Jen's favorite language is: Python.
+# Khoa's favorite language is: C.
+# Dung's favorite language is: Java.
+# Mr. Bong Bang's favorite language is: Ruby.
+
 friends = ["khoa", "dung"]
 
 # Looping through all the key in a Dictionary
