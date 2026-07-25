@@ -1,5 +1,5 @@
 ======================================================================
-           PYTHON DICTIONARY LOOPING CHEAT SHEET 🐍
+           PYTHON DICTIONARY LOOPING CHEAT SHEET 
 ======================================================================
 
 1. GET BOTH KEYS & VALUES (Lấy cả cặp Key-Value)
@@ -37,7 +37,7 @@ for value in my_dict.values():
     print(value)
 
 
-⭐ BONUS PRO TIP: HANDLE DUPLICATES (Xử lý trùng lặp)
+⭐ TIP: HANDLE DUPLICATES (Xử lý trùng lặp)
 ----------------------------------------------------------------------
 👉 Method: set(my_dict.values())
 💡 Use case: Khi lấy Value nhưng muốn lọc bỏ các giá trị giống nhau.
