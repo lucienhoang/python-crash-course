@@ -10,6 +10,7 @@ print("Jen favorite's language is " + favorite_languages["jen"].title() + ".")
 
 friends = ["khoa", "dung"]
 
+# Looping through all the key in a Dictionary
 for name in favorite_languages:
     print(name.title())
     if name in friends:
