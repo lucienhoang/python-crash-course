@@ -7,3 +7,23 @@ favorite_languages = {
 
 print("Jen favorite's language is " + favorite_languages["jen"].title() + ".")
 # Jen favorite's language is Python.
+
+friends = ["khoa", "dung"]
+
+for name in favorite_languages:
+    print(name.title())
+    if name in friends:
+        print(
+            " Hi "
+            + name.title()
+            + ", I see your favorite languages is "
+            + favorite_languages[name].title()
+            + "!"
+        )
+
+# Jen
+# Khoa
+#  Hi Khoa, I see your favorite languages is C.
+# Dung
+#  Hi Dung, I see your favorite languages is Java.
+# Mr. Bong Bang
