@@ -8,7 +8,7 @@ favorite_languages = {
 print("Jen favorite's language is " + favorite_languages["jen"].title() + ".")
 # Jen favorite's language is Python.
 
-# Looping through all key-value pairs
+# Looping through all key-value pairs -> use medthod items() -> tuple
 for name, language in favorite_languages.items():
     print(name.title() + "'s favorite language is: " + language.title() + ".")
 

@@ -1,0 +1,49 @@
+======================================================================
+           PYTHON DICTIONARY LOOPING CHEAT SHEET 🐍
+======================================================================
+
+1. GET BOTH KEYS & VALUES (Lấy cả cặp Key-Value)
+----------------------------------------------------------------------
+👉 Method: .items()
+💡 Use case: Khi cần sử dụng cả khóa và giá trị cùng lúc.
+
+Code:
+for key, value in my_dict.items():
+    print(f"Key: {key} -> Value: {value}")
+
+
+2. GET KEYS ONLY (Chỉ lấy Key)
+----------------------------------------------------------------------
+👉 Method: .keys() (Có thể lược bỏ / Optional)
+💡 Use case: Khi chỉ quan tâm đến danh sách các từ khóa.
+🔥 Pro Tip: Python mặc định duyệt qua Key, nên viết tắt sẽ sạch code hơn.
+
+Code (Cách đầy đủ):
+for key in my_dict.keys():
+    print(key)
+
+Code (Cách viết tắt - Recommended):
+for key in my_dict:
+    print(key)
+
+
+3. GET VALUES ONLY (Chỉ lấy Value)
+----------------------------------------------------------------------
+👉 Method: .values()
+💡 Use case: Khi chỉ quan tâm đến dữ liệu của giá trị, không cần key.
+
+Code:
+for value in my_dict.values():
+    print(value)
+
+
+⭐ BONUS PRO TIP: HANDLE DUPLICATES (Xử lý trùng lặp)
+----------------------------------------------------------------------
+👉 Method: set(my_dict.values())
+💡 Use case: Khi lấy Value nhưng muốn lọc bỏ các giá trị giống nhau.
+
+Code:
+for unique_value in set(my_dict.values()):
+    print(unique_value)
+
+======================================================================
