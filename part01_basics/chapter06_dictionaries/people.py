@@ -18,3 +18,16 @@ for index, person in enumerate(people, start=1):
     print(f"\t Fullname: {full_name}")
     print(f"\t Age: {age}")
     print(f"\t City: {city}")
+
+# 1.
+#          Fullname: Le Dung
+#          Age: 22
+#          City: Ha Noi
+# 2.
+#          Fullname: Khoa Hoang
+#          Age: 27
+#          City: Ho Chi Minh
+# 3.
+#          Fullname: Luci Liu
+#          Age: 42
+#          City: New York
