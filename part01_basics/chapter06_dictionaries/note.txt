@@ -47,3 +47,18 @@ for unique_value in set(my_dict.values()):
     print(unique_value)
 
 ======================================================================
+
+# 1. Choose the right data structure: A list of dictionaries is perfect for managing a collection of items.
+spike = {"name": "spike", "owner": "dung", "kind": "dog"}
+tom = {"name": "tom", "owner": "khoa", "kind": "cat"}
+jerry = {"name": "jerry", "owner": "laurence", "kind": "mouse"}
+
+pets = [spike, tom, jerry]
+
+# 2. Variable names vs Data: Variable names (like 'spike') only exist in code. 
+# To use the name as data, it must be stored inside the dictionary as a key-value pair.
+
+# 3. Clean looping: Use 'enumerate(..., start=1)' for automatic numbering, and '.title()' for clean text formatting.
+
+for index, pet in enumerate(pets, start=1):
+    print(f"{index}. {pet['name'].title()} is a {pet['kind']} living with {pet['owner'].title()}")
