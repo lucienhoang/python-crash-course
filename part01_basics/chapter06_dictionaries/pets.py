@@ -1,4 +1,3 @@
-# 1. Choose the right data structure: A list of dictionaries is perfect for managing a collection of items.
 spike = {"name": "spike", "owner": "dung", "kind": "dog"}
 tom = {"name": "tom", "owner": "khoa", "kind": "cat"}
 jerry = {"name": "jerry", "owner": "laurence", "kind": "mouse"}
