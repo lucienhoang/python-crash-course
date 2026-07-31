@@ -1,9 +1,19 @@
-favorite_numbers = {"khoa": 13, "dung": 4, "laurence": 7}
+favorite_numbers = {"khoa": [13, 7, 10], "dung": [4, 2, 5], "laurence": [7, 9, 1]}
 
-print("Khoa favorite number is: " + str(favorite_numbers["khoa"]))
-print("Dung favorite number is: " + str(favorite_numbers["dung"]))
-print("Laurence favorite number is: " + str(favorite_numbers["laurence"]))
+for index, (names, numbers) in enumerate(favorite_numbers.items(), start=1):
+    print(f"{index}. {names.title()} favorite number ares:")
+    for number in numbers:
+        print(f"\t{number}")
 
-# Khoa favorite number is: 13
-# Dung favorite number is: 4
-# Laurence favorite number is: 7
+# 1. Khoa favorite number ares:
+#         13
+#         7
+#         10
+# 2. Dung favorite number ares:
+#         4
+#         2
+#         5
+# 3. Laurence favorite number ares:
+#         7
+#         9
+#         1
