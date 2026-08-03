@@ -9,3 +9,6 @@ else:
 # How tall are you, in inches? 50
 
 # You are tall enough to ride!
+
+# When you use numerical input to do calculations and comparisons,
+# be sure to convert the input value to numerical representation first.
