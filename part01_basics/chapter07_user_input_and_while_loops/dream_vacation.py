@@ -5,17 +5,17 @@ yes_no_prompt = "Would you like to let another respond? (yes/no) "
 
 while True:
     name = input(name_prompt)
-    vacation_place = input(question_prompt)
+    destination = input(question_prompt)
 
-    responses[name] = vacation_place
+    responses[name] = destination
 
     respond = input(yes_no_prompt)
-    if respond == "no":
+    if respond.lower() == "no":
         break
 
 print("\n--- Poll Result ---")
-for name, reponse in responses.items():
-    print(f"{name.title()} would like to go {reponse.title()}")
+for name, response in responses.items():
+    print(f"{name.title()} would like to go {response.title()}")
 
 
 # What is your name? luci
