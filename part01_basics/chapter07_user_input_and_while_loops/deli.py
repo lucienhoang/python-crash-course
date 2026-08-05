@@ -9,3 +9,14 @@ while sandwich_orders:
 print("\n--- Sandwiches made ---")
 for sandwich in finished_sandwiches:
     print(sandwich)
+
+# I made you a Ham & Cheese sandwiche
+# I made you a Egg sandwiche
+# I made you a Tuna sandwiche
+# I made you a Panini sandwiche
+
+# --- Sandwiches made ---
+# Ham & Cheese
+# Egg
+# Tuna
+# Panini
