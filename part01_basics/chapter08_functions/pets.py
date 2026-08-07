@@ -5,11 +5,15 @@ def describe_pet(animal_type, pet_name):  # Positional arguments
 
 
 describe_pet("dog", "bi xanh")
+describe_pet(pet_name="bun", animal_type="cat")  # keyword arguments
 describe_pet("cat", "bun")
 
 
 # I have a dog.
 # My dog's name is Bi Xanh
+
+# I have a cat.
+# My cat's name is Bun
 
 # I have a cat.
 # My cat's name is Bun
