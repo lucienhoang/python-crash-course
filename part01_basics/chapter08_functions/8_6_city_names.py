@@ -1,4 +1,5 @@
 def city_country(city, country):
+    """Return a city and it's country, neatly formatted"""
     prompt = f"{city.title()}, {country.title()}!"
     return prompt
 
