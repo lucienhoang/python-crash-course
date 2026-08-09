@@ -19,7 +19,8 @@ def show_completed_models(completed_models):
 unprinted_designs = ["iphone case", "robot pendant", "dodecahedron"]
 completed_models = []
 
-print_models(unprinted_designs, completed_models)
+print_models(unprinted_designs[:], completed_models)
+# The Slice [:] notation makes a copy of the list to send to the function.
 show_completed_models(completed_models)
 
 # Printing model: dodecahedron
