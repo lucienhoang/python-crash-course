@@ -1,13 +1,4 @@
-# Modifying a list in a function
-def print_models(unprinted_designs, completed_models):
-    """
-    Simulate printing each design, until none are left.
-    Move each design to completed_models after printing.
-    """
-    while unprinted_designs:
-        current_design = unprinted_designs.pop()
-        print(f"Printing model: {current_design}")
-        completed_models.append(current_design)
+import printing_function
 
 
 def show_completed_models(completed_models):
@@ -19,7 +10,7 @@ def show_completed_models(completed_models):
 unprinted_designs = ["iphone case", "robot pendant", "dodecahedron"]
 completed_models = []
 
-print_models(unprinted_designs[:], completed_models)
+printing_function.print_models(unprinted_designs[:], completed_models)
 # The Slice [:] notation makes a copy of the list to send to the function.
 show_completed_models(completed_models)
 
