@@ -18,6 +18,7 @@ print(friend_foods)
 
 for food in friend_foods:
     print(food)
+    
 # banh xeo
 # banh hoi
 # banh beo
