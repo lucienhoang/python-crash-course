@@ -1,4 +1,11 @@
 guest_lists = ["Dung Dung", "BongBang", "Thao Dung"]
 print(guest_lists)
+# ['Dung Dung', 'BongBang', 'Thao Dung']
 
-print("Thank you so much for coming to my dinner. There are " + str(len(guest_lists)) + " great people in the table tonight. Please welcome!")
+print(
+    "Thank you so much for coming to my dinner. There are "
+    + str(len(guest_lists))
+    + " great people in the table tonight. Please welcome!"
+)
+# Thank you so much for coming to my dinner.
+# There are 3 great people in the table tonight. Please welcome!
