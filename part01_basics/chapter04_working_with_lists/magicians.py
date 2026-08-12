@@ -20,3 +20,5 @@ print("Thank you, everyone. That was a great magic show!")
 
 # Carolina, that was a great trick.
 # I can't wait to see your next trick, Carolina.
+
+# Thank you, everyone. That was a great magic show!
