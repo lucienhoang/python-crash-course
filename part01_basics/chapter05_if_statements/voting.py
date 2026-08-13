@@ -6,3 +6,6 @@ if age >= 18:
 else:
     print("Sorry bro. You are too young to vote.")
     print("Please eat more.")
+
+# Sorry bro. You are too young to vote.
+# Please eat more.

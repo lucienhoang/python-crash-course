@@ -5,3 +5,5 @@ if alien_color == "green":
 
 if alien_color != "red":
     print("_")
+
+# You just earned 5 points.

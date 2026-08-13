@@ -6,3 +6,6 @@ if (ages_0 >= 18) and (ages_1 >= 21):
 
 if (ages_0 >= 18) or (ages_1 < 21):
     print("You are old enough to get married.")
+
+# You are old enough to get married and vote.
+# You are old enough to get married.
