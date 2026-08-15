@@ -18,3 +18,27 @@ class Dog:
     def roll_over(self):
         """Simulate a dog sitting in response to a command"""
         print(f"{self.name.title()} rolled over!")
+
+
+my_dog = Dog("bi xanh", 3)
+your_dog = Dog("lucy", 2)
+
+print(f"My dog's name is {my_dog.name.title()}.")
+print(f"My dog is {my_dog.age} years old.")
+
+my_dog.sit()
+my_dog.roll_over()
+
+print(f"\nYour dog's name is {your_dog.name.title()}.")
+print(f"Your dog is {your_dog.age} years old.")
+your_dog.sit()
+
+
+# My dog's name is Bi Xanh.
+# My dog is 3 years old.
+# Bi Xanh is now sitting.
+# Bi Xanh rolled over!
+
+# Your dog's name is Lucy.
+# Your dog is 2 years old.
+# Lucy is now sitting.
