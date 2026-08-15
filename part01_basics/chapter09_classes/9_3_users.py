@@ -7,7 +7,7 @@ class User:
         self.gender = gender
         self.field = field
 
-    def descibe_user(self):
+    def describe_user(self):
         print("\nUser information:")
         print(f"First name: {self.first_name.title()}")
         print(f"Last name: {self.last_name.title()}")
@@ -16,7 +16,8 @@ class User:
 
     def greet_user(self):
         print("---")
-        name = self.first_name.title() + " " + self.last_name.title()
+        # name = self.first_name.title() + " " + self.last_name.title()
+        name = f"{self.first_name.title()} {self.last_name.title()}"
         print(f"Hello {name}!")
 
 
@@ -24,13 +25,13 @@ user_1 = User("Khoa", "Hoang", "Male", "IT")
 user_2 = User("Dung", "Le", "Female", "Korean culture")
 user_3 = User("Laurence", "Huynh", "Male", "English")
 
-user_1.descibe_user()
+user_1.describe_user()
 user_1.greet_user()
 
-user_2.descibe_user()
+user_2.describe_user()
 user_2.greet_user()
 
-user_3.descibe_user()
+user_3.describe_user()
 user_3.greet_user()
 
 
