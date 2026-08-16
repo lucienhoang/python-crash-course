@@ -55,7 +55,6 @@ class Moderator(User):
 
 
 admin_1 = Admin("khoa", "hoang", "male", "IT")
-
 print("Admin privileges list:")
 admin_1.privileges.show_privileges()
 
