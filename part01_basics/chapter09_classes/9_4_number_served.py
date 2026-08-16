@@ -10,6 +10,12 @@ class Restaurant:
         print(f"The name of restaurant is {self.restaurant_name.title()}.")
         print(f"{self.restaurant_name.title()} serves {self.cuisine_type} cuisine.")
 
+    def set_number_served(self, value):
+        self.number_served = value
+
+    def increment_number_served(self, value):
+        self.number_served += value
+
 
 my_restaurant = Restaurant("Lucy Dinner", "Viet food")
 
@@ -25,3 +31,15 @@ print(f"Number of customers have been served: {my_restaurant.number_served}")
 # Number of customers have been served: 0
 # ---
 # Number of customers have been served: 23
+
+print("---")
+my_restaurant.set_number_served(43)
+print(f"Number of customers have been served: {my_restaurant.number_served}")
+
+# Number of customers have been served: 43
+
+print("---")
+my_restaurant.increment_number_served(20)
+print(f"Number of customers have been served: {my_restaurant.number_served}")
+
+# Number of customers have been served: 63
