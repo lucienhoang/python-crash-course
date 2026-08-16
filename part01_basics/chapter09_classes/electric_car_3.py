@@ -1,4 +1,4 @@
-# Overiding Methods from The Parent Class
+# Instances as Attributes (Object trong Object)
 class Car:
     """A simple attempt to represent a car"""
 
@@ -56,17 +56,10 @@ class ElectricCar(Car):
 
 
 my_tesla = ElectricCar("tesla", "model-S", 2016)
-
 print(my_tesla.get_descriptive_name())
-# 2016 Tesla Model-S
-
 my_tesla.describe_battery()
-# This car has a 70-kWh battery.
 
 my_car = Car("honda", "ss501", 2000)
 
 my_car.fill_gas_tank()
-# You have to fill gas tank.
-
 my_tesla.fill_gas_tank()
-# This car doesn't need a gas tank.
