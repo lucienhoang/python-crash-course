@@ -34,6 +34,28 @@ class Car:
         print("You have to fill gas tank.")
 
 
+class Battery:
+    """A simple attempt to model a batery for an electric car."""
+
+    def __init__(self, battery_size=70):
+        """Initialize the battery's attributes."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Print the statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def get_range(self):
+        """Print a statement about the range this battery provides."""
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+
+        message = f"This car can go approximately {range} miles in a full charge."
+        print(message)
+
+
 class ElectricCar(Car):
     """Represent aspects of a car, specify to electric vehicles."""
 
@@ -44,22 +66,15 @@ class ElectricCar(Car):
         """
 
         super().__init__(make, model, year)
-        self.battery_size = 70
-
-    def describe_battery(self):
-        """Print a statement describing the battery size."""
-        print(f"This car has a {self.battery_size}-kWh battery.")
-
-    def fill_gas_tank(self):
-        """Electric car don't have gas tanks."""
-        print("This car doesn't need a gas tank.")
+        self.battery = Battery()
 
 
 my_tesla = ElectricCar("tesla", "model-S", 2016)
+
 print(my_tesla.get_descriptive_name())
-my_tesla.describe_battery()
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
 
-my_car = Car("honda", "ss501", 2000)
-
-my_car.fill_gas_tank()
-my_tesla.fill_gas_tank()
+# 2016 Tesla Model-S
+# This car has a 70-kWh battery.
+# This car can go approximately 240 miles in a full charge.
