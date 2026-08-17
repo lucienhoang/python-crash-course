@@ -12,6 +12,10 @@ Learning Python from the basics through hands-on exercises from the book, with p
 - VS Code
 - Git & GitHub
 
+## Resource for Exploring the Python standard library
+
+- https://pymotw.com/3/
+
 ## 📝 Notes
 
 Exercises are organized by chapter, with comments explaining the logic where useful for future review.
