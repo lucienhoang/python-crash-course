@@ -5,8 +5,9 @@ file_path_1 = "part01_basics/chapter10_file_and_exceptions/pi_digits.txt"
 file_path_2 = (
     "D:/python-crash-course/part01_basics/chapter10_file_and_exceptions/pi_digits.txt"
 )
+
 with open(file_path_2) as file_object:
-    contents = file_object.read()
+    contents = file_object.read()  # read entire file
     print(contents.rstrip())
 
 
