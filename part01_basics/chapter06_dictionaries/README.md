@@ -1,5 +1,4 @@
-````markdown
-# 🐍 Python Dictionary Looping Cheat Sheet
+## 🐍 Python Dictionary Looping Cheat Sheet
 
 Quick reference for looping through dictionaries and lists of dictionaries.
 
@@ -12,7 +11,7 @@ Use `.items()` when you need both the key and value.
 ```python
 for key, value in my_dict.items():
     print(f"Key: {key} -> Value: {value}")
-````
+```
 
 ---
 
