@@ -12,7 +12,7 @@ Learning Python from the basics through hands-on exercises from the book, with p
 - VS Code
 - Git & GitHub
 
-## Resource for Exploring the Python standard library
+## 💡Resource for Exploring the Python standard library
 
 - https://pymotw.com/3/
 
