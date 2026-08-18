@@ -1,3 +1,4 @@
+# Count the occurrences of "the" in the file, ignoring case
 from pathlib import Path
 
 file_name = Path(
@@ -7,5 +8,7 @@ file_name = Path(
 with open(file_name, encoding="utf-8") as obj_file:
     contents = obj_file.read()
 
+number = contents.lower().count("the")
+print(f"The word 'the' appears {number} times in {file_name.name}.")
 
-print(contents.lower().count("the"))
+# The word 'the' appears 367 times in happy.txt.
