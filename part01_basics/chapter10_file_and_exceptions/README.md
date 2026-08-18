@@ -90,3 +90,5 @@ with open("file.txt", "a") as file:
 - `readlines()` → **list of lines**
 - `"w"` → **write / overwrite**
 - `"a"` → **append**
+
+- str is immutable, so string methods don't modify the original string; they return a new string instead.
