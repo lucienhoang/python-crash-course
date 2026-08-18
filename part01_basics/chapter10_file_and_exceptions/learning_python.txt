@@ -1,0 +1,4 @@
+In Python, you can use dictionaries to store key-value pairs.
+In Python, you can create classes to model real-world things.
+In Python, you can import modules from the standard library to help you solve real-world problems.
+In Python, you can organize your project’s structure in different ways. Python provides many options for organizing your code efficiently.
