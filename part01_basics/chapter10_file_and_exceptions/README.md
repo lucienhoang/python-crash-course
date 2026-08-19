@@ -92,3 +92,4 @@ with open("file.txt", "a") as file:
 - `"a"` → **append**
 
 - str is immutable, so string methods don't modify the original string; they return a new string instead.
+- [View remember_me.py](./remember_me.py)
