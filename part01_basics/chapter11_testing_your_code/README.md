@@ -1,5 +1,3 @@
-À đúng rồi 😆 Bồ cần nguyên format Markdown để copy thẳng vào README.md chứ không phải nội dung render sẵn. Đây nha:
-
 # Chapter 11 — Testing Your Code
 
 ## Key Concepts
