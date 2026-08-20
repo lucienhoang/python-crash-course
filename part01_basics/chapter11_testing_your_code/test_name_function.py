@@ -1,4 +1,5 @@
 import unittest
+
 from name_function import get_formatted_name
 
 
@@ -10,9 +11,16 @@ class NameTestCase(unittest.TestCase):
         formatted_name = get_formatted_name("janis", "joplin")
         self.assertEqual(formatted_name, "Janis Joplin")
 
+    def test_first_last_middle_name(self):
+        """Do names like 'Wolfgang Amadeus Mozart' work?"""
+        formatted_name = get_formatted_name("wolfgang", "mozart", "amadeus")
+        self.assertEqual(formatted_name, "Wolfgang Amadeus Mozart")
+
 
 unittest.main()
 
-# .
+# ..
 # ----------------------------------------------------------------------
-# Ran 1 test in 0.000s
+# Ran 2 tests in 0.000s
+
+# OK
