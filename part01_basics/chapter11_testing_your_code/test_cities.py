@@ -10,11 +10,15 @@ class TestCityCountry(unittest.TestCase):
         name = city_country("santiago", "chile")
         self.assertEqual(name, "Santiago, Chile.")
 
+    def test_city_country_population(self):
+        name = city_country("santiago", "chile", 5000000)
+        self.assertEqual(name, "Santiago, Chile - population 5000000.")
+
 
 unittest.main()
 
-# .
+# ..
 # ----------------------------------------------------------------------
-# Ran 1 test in 0.000s
+# Ran 2 tests in 0.000s
 
-# # OK
+# OK

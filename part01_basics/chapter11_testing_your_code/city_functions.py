@@ -1,4 +1,7 @@
-def city_country(city_name, country_name):
+def city_country(city_name, country_name, population=""):
     """Return a neatly formatted city, country name."""
-    msg = f"{city_name.title()}, {country_name.title()}."
+    if population:
+        msg = f"{city_name.title()}, {country_name.title()} - population {population}."
+    else:
+        msg = f"{city_name.title()}, {country_name.title()}."
     return msg
