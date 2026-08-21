@@ -19,6 +19,14 @@ class Ship:
         self.rect.centerx = self.screen_rect.centerx  #  The x-coordinate of the ship’s center match the centerx attribute of the screen’s rect.
         self.rect.bottom = self.screen_rect.bottom  # The y-coordinate of the ship’s bottom equal to the value of the screen rect’s bottom attribute.
 
+        # Movement flag
+        self.moving_right = False
+
+    def update(self):
+        """Update the ship's position based on the movement flag."""
+        if self.moving_right:
+            self.rect.centerx += 1
+
     def blitme(self):
         """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)
