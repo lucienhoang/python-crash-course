@@ -1,6 +1,6 @@
 # .\.venv\Scripts\Activate.ps1
 
-import pygame  # The pygame module contains the functionality to make a game.
+import pygame  # The pygame module contains the functionality to make a game.  # noqa: I001
 from settings import Settings
 from ship import Ship
 import game_functions as gf
