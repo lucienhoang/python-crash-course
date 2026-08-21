@@ -3,4 +3,5 @@ tempCodeRunnerFile.py
 *.pyc
 .vscode/
 venv/
+.venv/
 .DS_Store
