@@ -7,14 +7,23 @@ class Ship:
         self.screen = screen
         self.ai_settings = ai_settings
 
-        # Load the ship image and get its rect.
-        self.image = pygame.image.load(
-            "images/ship.bmp"
-        )  #  returns a surface representing the ship
-        self.rect = self.image.get_rect()  # Store the ship’s rect in self.rect
-        self.screen_rect = (
-            self.screen.get_rect()
-        )  # Store the screen’s rect in self.screen_rect
+        # Load the ship image.
+        self.image = pygame.image.load("images/ship.png")
+
+        # Calculate the new width.
+        width = self.image.get_width() * ai_settings.sprite_scale
+
+        # Calculate the new height.
+        height = self.image.get_height() * ai_settings.sprite_scale
+
+        # Resize the ship image.
+        self.image = pygame.transform.smoothscale(self.image, (width, height))
+
+        # Store the ship’s rect in self.rect.
+        self.rect = self.image.get_rect()
+
+        # Store the screen’s rect in self.screen_rect
+        self.screen_rect = self.screen.get_rect()
 
         # Start each new ship at the bottom center of the screen.
         self.rect.centerx = self.screen_rect.centerx  #  The x-coordinate of the ship’s center match the centerx attribute of the screen’s rect.
