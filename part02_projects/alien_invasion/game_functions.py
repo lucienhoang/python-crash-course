@@ -18,10 +18,11 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
     elif event.key == pygame.K_DOWN:
         # Move the ship to the bottom.
         ship.moving_down = True
-    elif event.key == pygame.K_SPACE:
+    elif event.key == pygame.K_SPACE:  # noqa: SIM102
         # Create a new bullet and add it to the bullets group.
-        new_bullet = Bullet(ai_settings, screen, ship)
-        bullets.add(new_bullet)
+        if len(bullets) < ai_settings.bullet_allowed:
+            new_bullet = Bullet(ai_settings, screen, ship)
+            bullets.add(new_bullet)
 
 
 def check_keyup_events(event, ship):
