@@ -36,9 +36,9 @@ class Alien(Sprite):
         self.screen.blit(self.image, self.rect)
 
     def check_edge(self):
-        """Return True if  alien is at edge of screen."""
+        """Return True if alien is at edge of screen."""
         screen_rect = self.screen.get_rect()
-        if self.rect.right >= screen_rect or self.rect.left <= 0:
+        if self.rect.right >= screen_rect.right or self.rect.left <= 0:
             return True
 
     def update(self):
