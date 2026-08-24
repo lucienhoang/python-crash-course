@@ -1,6 +1,5 @@
 import pygame.font
 from pygame.sprite import Group
-
 from ship import Ship
 
 
@@ -42,6 +41,8 @@ class Scoreboard:
         self.screen.blit(self.score_image, self.score_rect)
         self.screen.blit(self.high_score_image, self.high_score_rect)
         self.screen.blit(self.level_image, self.level_rect)
+        # Draw ships.
+        self.ships.draw(self.screen)
 
     def prep_high_score(self):
         """Turn the high score into a rendered image."""
@@ -72,6 +73,15 @@ class Scoreboard:
         self.ships = Group()
         for ship_number in range(self.stats.ship_left):
             ship = Ship(self.ai_settings, self.screen)
+
+            life_icon_scale = 0.5
+            new_width = int(ship.rect.width * life_icon_scale)
+            new_height = int(ship.rect.height * life_icon_scale)
+            ship.image = pygame.transform.smoothscale(
+                ship.image, (new_width, new_height)
+            )
+            ship.rect = ship.image.get_rect()
+
             ship.rect.x = 10 + ship_number * ship.rect.width
             ship.rect.y = 10
             self.ships.add(ship)
