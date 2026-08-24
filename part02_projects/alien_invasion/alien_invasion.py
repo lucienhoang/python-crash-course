@@ -17,6 +17,7 @@ def run_game():
         (ai_settings.screen_width, ai_settings.screen_height)
     )
     pygame.display.set_caption("Alien Invasion")
+    clock = pygame.time.Clock()
 
     # Create an instance to store game statistics.
     stats = GameStats(ai_settings)
@@ -47,6 +48,8 @@ def run_game():
 
         # Update screen.
         gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button)
+
+        clock.tick(60)
 
 
 run_game()
