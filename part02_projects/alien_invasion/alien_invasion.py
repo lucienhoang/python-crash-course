@@ -5,6 +5,7 @@ from pygame.sprite import Group
 from settings import Settings
 from game_stats import GameStats
 from ship import Ship
+from button import Button
 import game_functions as gf
 
 
@@ -28,6 +29,9 @@ def run_game():
     # Creating the fleet of alien.
     gf.create_fleet(ai_settings, screen, ship, aliens)
 
+    # Make the Play button.
+    play_button = Button(ai_settings, screen, "Play")
+
     # Start the main loop for the game.
     while True:
         # Watch for keyboard and mouse events.
@@ -40,7 +44,7 @@ def run_game():
             # Update aliens.
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
         # Update screen.
-        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
+        gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button)
 
 
 run_game()
