@@ -4,6 +4,7 @@ import pygame  # The pygame module contains the functionality to make a game.  #
 from pygame.sprite import Group
 from settings import Settings
 from game_stats import GameStats
+from scoreboard import Scoreboard
 from ship import Ship
 from button import Button
 import game_functions as gf
@@ -19,8 +20,9 @@ def run_game():
     pygame.display.set_caption("Alien Invasion")
     clock = pygame.time.Clock()
 
-    # Create an instance to store game statistics.
+    # Create an instance to store game statistics and create a score board.
     stats = GameStats(ai_settings)
+    sb = Scoreboard(ai_settings, screen, stats)
 
     # Make a ship, a group of bullets, and a group of aliens.
     ship = Ship(ai_settings, screen)
@@ -42,12 +44,14 @@ def run_game():
             # Update ship.
             ship.update()
             # Update bullets.
-            gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
+            gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)
             # Update aliens.
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
 
         # Update screen.
-        gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button)
+        gf.update_screen(
+            ai_settings, screen, stats, sb, ship, aliens, bullets, play_button
+        )
 
         clock.tick(60)
 

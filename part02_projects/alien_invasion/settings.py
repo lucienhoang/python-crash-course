@@ -35,6 +35,8 @@ class Settings:
         self.alien_speed_factor = 2
         # fleet direction of represents right; -1 represent left.
         self.fleet_direction = 1
+        # Scoring
+        self.alien_points = 50
 
     def increase_speed(self):
         """Increase spped settings."""
