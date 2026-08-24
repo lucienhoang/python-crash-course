@@ -50,9 +50,8 @@ def check_keydown_events(event, ai_settings, screen, stats, ship, aliens, bullet
         fire_bullet(ai_settings, screen, ship, bullets)
     elif event.key == pygame.K_q:
         sys.exit()
-    elif event.key == pygame.K_p:
-        if not stats.game_active:
-            start_game(ai_settings, screen, stats, ship, aliens, bullets)
+    elif event.key == pygame.K_p and not stats.game_active:
+        start_game(ai_settings, screen, stats, ship, aliens, bullets)
 
 
 def check_keyup_events(event, ship):
@@ -151,7 +150,8 @@ def check_bullet_alien_collisions(
     # Remove any bullets and aliens that have collided.
     collisions = pygame.sprite.groupcollide(bullets, aliens, False, True)
     if collisions:
-        stats.score += ai_settings.alien_points
+        for aliens in collisions.values():
+            stats.score += ai_settings.alien_points * len(aliens)
         sb.prep_score()
     if len(aliens) == 0:
         # Destroy existing bullets, speed up game, and create new fleet.
