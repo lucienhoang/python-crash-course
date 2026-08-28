@@ -1,4 +1,4 @@
-import sys
+import sys  # to exit the game.
 from time import sleep
 
 import pygame
@@ -114,7 +114,7 @@ def check_play_button(
 
 
 def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button):
-    """Update images on the screen during and flip to the new screen."""
+    """Update images on the screen and flip to the new screen."""
 
     # Redraw the screen during each pass through loop.
     screen.fill(ai_settings.bg_color)
