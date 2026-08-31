@@ -25,7 +25,7 @@ Pilot your ship, blast down waves of aliens, and survive as long as you can. Cle
 
 ```bash
 # Clone the repo
-git clone https://github.com/khoahdinh/alien-invasion.git
+git clone https://github.com/lucienhoang/alien-invasion.git
 cd alien-invasion
 
 # Install dependencies
