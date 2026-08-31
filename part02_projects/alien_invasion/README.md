@@ -3,7 +3,7 @@
 A classic arcade-style shooter built with **Python** and **Pygame**, based on the project from _Python Crash Course_ by Eric Matthes — extended with several original features beyond the book.
 
 ![Gameplay](images/gameplay.gif)
-![Gameplay](images/gameplay.gif)
+![Gameplay](images/gameplay.png)
 
 > Part of my journey building small things that make everyday life a little better — [more projects here](https://github.com/khoahdinh).
 
