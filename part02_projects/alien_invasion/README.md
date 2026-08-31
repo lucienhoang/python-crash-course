@@ -63,10 +63,9 @@ While following _Python Crash Course_, I extended the original project with a fe
 
 ## 🧠 What I Learned
 
-- The difference between a `rect`'s **edge attributes** (`top`, `bottom`, `left`, `right`) used for comparisons, and its **anchor attributes** (`x`, `y`, `centerx`, `centery`) used for positioning
-- Why `pygame.Rect` only stores integers, and why tracking position separately as a `float` (`self.x`, `self.y`) is necessary for smooth, sub-pixel-accurate movement
-- How to structure game state with `Settings` and `GameStats`: separating values that reset every game (speed, score) from values that persist across sessions (high score)
-- Why frame-rate independence (`clock.tick()`) matters — game logic should never be tied to how fast the machine happens to run
+- Realistic development process: write the simplest possible code first, then refactor as the project grows more complex — it doesn't need to be perfect from the start.
+- Quick way to understand a class: look at `__init__()` to see what input it needs (constructor parameters) and what attributes it creates — the fastest way to grasp what a class does without reading all the code.
+- Game speed must be independent of machine speed: always use `clock.tick(FPS)` in the main loop. Without it, every object's movement speed depends on how busy the CPU is at that moment, causing the game to feel inconsistently fast or slow.
 
 ## 🛠 Built With
 
