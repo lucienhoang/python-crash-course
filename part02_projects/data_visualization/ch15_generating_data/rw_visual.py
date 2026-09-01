@@ -10,9 +10,11 @@ while True:
     # Set the size of the plotting window.
     plt.figure(figsize=(10, 6))
 
-    # Plot the points, and show the plot.
+    # Plot the points.
     point_numbers = list(range(rw.num_points))
-    plt.scatter(rw.x_values, rw.y_values, c=point_numbers, edgecolors="none", s=1)
+
+    # plt.scatter(rw.x_values, rw.y_values, c=point_numbers, edgecolors="none", s=1)
+    plt.plot(rw.x_values, rw.y_values, lw=1)
 
     # Emphasize the first and last points.
     plt.scatter(0, 0, c="orange", edgecolors="none", s=100)
