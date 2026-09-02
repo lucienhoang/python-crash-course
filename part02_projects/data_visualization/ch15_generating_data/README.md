@@ -2,23 +2,50 @@
 
 **Matplotlib**
 
-- Random walk visual
+- Random walk visual:
+
   ![Random walk visual](images/rw_visual.png)
-- Cube numbers
+
+- Cube numbers:
+
   ![Cube numbers plot](images/15_1_cubes.png)
-- Die visual
+
+- Die visual:
+
   ![Die visual](images/die_visual_matplotlib.png)
-- Mpl Squares
+
+- Mpl Squares:
+
   ![Mpl squares plot](images/mpl_squares.png)
-- Scatter Squares
+
+- Scatter Squares:
+
   ![Scatter squares plot](images/scatter_squares.png)
 
 **Pygal — dice roll frequency**
+
+- Die visual:
+
 ![Dice roll frequency](images/die_visual.svg)
+
+- Dice visual:
+
 ![Dice roll frequency](images/dice_visual.svg)
+
+- Different dice visual:
+
 ![Dice roll frequency](images/different_dice_visual.svg)
+
+- Two D8s visual:
+
 ![Dice roll frequency](images/two_d8s.svg)
+
+- Three dice visual:
+
 ![Dice roll frequency](images/three_dice.svg)
+
+- Multiplication dice visual:
+
 ![Dice roll frequency](images/multiplication.svg)
 
 ## 🧠 Matplotlib vs. Pygal
