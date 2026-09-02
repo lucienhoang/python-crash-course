@@ -11,7 +11,7 @@ results = [die.roll() for roll_num in range(1000)]
 # Analyze the results.
 frequencies = [results.count(value) for value in range(1, die.num_sides + 1)]
 
-# Visualize the results.
+# Visualize the results with Pygal.
 hist = pygal.Bar()
 
 hist.title = "Results of rolling one D6 1000 times."
