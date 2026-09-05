@@ -36,10 +36,15 @@ print("Repositories returned:", len(repo_dicts))
 #     print("Repository:", repo_dict["html_url"])
 #     print("Description:", repo_dict["description"])
 
-names, stars = [], []
+names, plot_dicts = [], []
 for repo_dict in repo_dicts:
     names.append(repo_dict["name"])
-    stars.append(repo_dict["stargazers_count"])
+
+    plot_dict = {
+        "value": repo_dict["stargazers_count"],
+        "label": repo_dict["description"],
+    }
+    plot_dicts.append(plot_dict)
 
 # Make visualization.
 my_style = LS("#333366", base_style=LCS)
@@ -58,5 +63,5 @@ chart = pygal.Bar(my_config, style=my_style)
 chart.title = "Most-Starred Python Projects on Github"
 chart.x_labels = names
 
-chart.add("", stars)
+chart.add("", plot_dicts)
 chart.render_to_file("files/python_repos.svg")
