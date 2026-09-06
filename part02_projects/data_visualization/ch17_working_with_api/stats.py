@@ -19,21 +19,32 @@ def get_repo_languages(username, language):
 
 def main():
     r = get_user_repos(USERNAME)
-    print("Status code: ", r.status_code)
-
     repos = r.json()
-    print("Number of repos:", len(repos))
+
+    total_byte = {}
+
     for repo in repos:
         repo_name = repo["name"]
         lang_response = get_repo_languages(USERNAME, repo_name)
 
         if lang_response.status_code == 200:
             languages = lang_response.json()
-            print(f"\n{repo_name}: {languages}")
-        else:
-            print(
-                f"\n{repo_name}: could not fetch languages (status {lang_response.status_code})."
-            )
+            for language, byte_count in languages.items():
+                total_byte[language] = total_byte.get(language, 0) + byte_count
+
+    # Calculating percentages.
+    grand_total = sum(total_byte.values())
+    percentage = {
+        language: (byte_count / grand_total) * 100
+        for language, byte_count in total_byte.items()
+    }
+
+    # Sort by percentage, descending.
+    sorted_langs = sorted(percentage.items(), key=lambda item: item[1], reverse=True)
+
+    print("\nLanguage breakdown across all repos:")
+    for language, pct in sorted_langs:
+        print(f"{language}: {pct:.1f}%")
 
 
 if __name__ == "__main__":
