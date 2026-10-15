@@ -5,3 +5,9 @@ tempCodeRunnerFile.py
 venv/
 .venv/
 .DS_Store
+# Database
+db.sqlite3
+*.sqlite3
+# Django
+*.log
+media/
