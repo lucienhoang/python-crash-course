@@ -50,14 +50,16 @@ def new_entry(request, topic_id):
         form = EntryForm()
     else:
         # POST data submitted; process data.
-        form = EntryForm(request.POST)
-        if form.is_valid():
+        form = EntryForm(request.POST)  # nhét dữ liệu user nhập vào form
+        if form.is_valid():  # kiểm tra hợp lệ
             new_entry = form.save(
                 commit=False
-            )  # Tạo object Entry nhưng chưa ghi vào database
-            new_entry.topic = topic
-            new_entry.save()
-            return redirect("learning_logs:topic", topic_id=topic_id)
+            )  # tạo Entry (có text), chưa ghi database
+            new_entry.topic = topic  # gán topic (lấy từ topic_id trên URL)
+            new_entry.save()  # ghi vào database
+            return redirect(
+                "learning_logs:topic", topic_id=topic_id
+            )  # quay về trang topic
 
     context = {"topic": topic, "form": form}
     return render(request, "learning_logs/new_entry.html", context)
