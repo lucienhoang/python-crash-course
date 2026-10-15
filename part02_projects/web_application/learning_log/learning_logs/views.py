@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 
-from .forms import TopicForm
+from .forms import EntryForm, TopicForm
 from .models import Topic
 
 
@@ -39,3 +39,25 @@ def new_topic(request):
 
     context = {"form": form}
     return render(request, "learning_logs/new_topic.html", context)
+
+
+def new_entry(request, topic_id):
+    """Add a new entry for a particular topic."""
+    topic = get_object_or_404(Topic, id=topic_id)
+
+    if request.method != "POST":
+        # No data submitted; create a blank form.
+        form = EntryForm()
+    else:
+        # POST data submitted; process data.
+        form = EntryForm(request.POST)
+        if form.is_valid():
+            new_entry = form.save(
+                commit=False
+            )  # Tạo object Entry nhưng chưa ghi vào database
+            new_entry.topic = topic
+            new_entry.save()
+            return redirect("learning_logs:topic", topic_id=topic_id)
+
+    context = {"topic": topic, "form": form}
+    return render(request, "learning_logs/new_entry.html", context)
