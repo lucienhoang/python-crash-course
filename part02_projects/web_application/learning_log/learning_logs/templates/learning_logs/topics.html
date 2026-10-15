@@ -6,8 +6,12 @@
 <p>Topics</p>
 
 <ul>
+  {# views.topics() truyền context = {'topics': topics}, nên ở đây dùng được biến `topics` #}
+  {# Mỗi vòng lặp, `topic` là 1 object Topic lấy từ database (Topic.objects.order_by('date_added')) #}
   {% for topic in topics %}
-  <li>{{topic}}</li>
+  {# topic.id: Django tự thêm field `id` (khóa chính, tự tăng) cho mọi model, không cần khai báo trong models.py #}
+  {# topic.id được truyền vào <int:topic_id> trong path("topics/<int:topic_id>/", ...) → ra link dạng /topics/3/ #}
+  <li><a href="{% url 'learning_logs:topic' topic.id %}">{{topic.text}}</a></li>
   {% empty %}
   <li>No topics have been added yet.</li>
   {% endfor %}
