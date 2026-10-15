@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Topic
 
@@ -14,3 +14,11 @@ def topics(request):
     topics = Topic.objects.order_by("date_added")
     context = {"topics": topics}
     return render(request, "learning_logs/topics.html", context)
+
+
+def topic(request, topic_id):
+    """Show a single topic and all its entries."""
+    topic = get_object_or_404(Topic, id=topic_id)
+    entries = topic.entry_set.order_by("-date_added")
+    context = {"topic": topic, "entries": entries}
+    return render(request, "learning_logs/topic.html", context)
