@@ -1,6 +1,8 @@
-{% extends "learning_logs/base.html" %} {% block content %} {% if form.errors %}
+{% extends "learning_logs/base.html" %} {% block content %}
+<!-- prettier-ignore -->
+{% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
-{% end if %}
+{% endif %}
 
 <form method="POST" action="{% url 'users:login' %}">
   {% csrf_token %} {{form.as_p}}
