@@ -19,9 +19,11 @@ def topics(request):
 
 def topic(request, topic_id):
     """Show a single topic and all its entries."""
-    topic = get_object_or_404(Topic, id=topic_id)
+    topic = get_object_or_404(
+        Topic, id=topic_id
+    )  # lấy object Topic từ database (đã có sẵn field id)
     entries = topic.entry_set.order_by("-date_added")
-    context = {"topic": topic, "entries": entries}
+    context = {"topic": topic, "entries": entries}  # đóng gói gửi qua template
     return render(request, "learning_logs/topic.html", context)
 
 
