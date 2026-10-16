@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import EntryForm, TopicForm
-from .models import Topic, Entry
+from .models import Entry, Topic
 
 
 # Create your views here.
