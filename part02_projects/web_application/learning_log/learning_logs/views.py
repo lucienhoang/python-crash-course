@@ -84,4 +84,4 @@ def edit_entry(request, entry_id):
                 "learning_logs:topic", topic_id=topic.id
             )  # quay về trang topic
     context = {"entry": entry, "topic": topic, "form": form}
-    return render(request, "learning_logs/edit_entry", context)
+    return render(request, "learning_logs/edit_entry.html", context)
