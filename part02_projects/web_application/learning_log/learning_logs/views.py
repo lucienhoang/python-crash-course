@@ -6,6 +6,12 @@ from .forms import EntryForm, TopicForm
 from .models import Entry, Topic
 
 
+# Check topic owner.
+def check_topic_owner(topic, request):
+    if topic.owner != request.user:
+        raise django.http.Http404
+
+
 # Create your views here.
 def index(request):
     """The home page for Learning logs."""
@@ -27,8 +33,8 @@ def topic(request, topic_id):
         Topic, id=topic_id
     )  # lấy object Topic từ database (đã có sẵn field id)
     # Make sure the topic belongs to the current user.
-    if topic.owner != request.user:
-        raise django.http.Http404
+    check_topic_owner(topic, request)
+
     entries = topic.entry_set.order_by("-date_added")
     context = {"topic": topic, "entries": entries}  # đóng gói gửi qua template
     return render(request, "learning_logs/topic.html", context)
@@ -44,7 +50,9 @@ def new_topic(request):
         # POST data submitted; process data.
         form = TopicForm(request.POST)
         if form.is_valid():
-            form.save()
+            new_topic = form.save(commit=False)
+            new_topic.owner = request.user
+            new_topic.save()
             return redirect("learning_logs:topics")
 
     context = {"form": form}
@@ -56,8 +64,7 @@ def new_entry(request, topic_id):
     """Add a new entry for a particular topic."""
     topic = get_object_or_404(Topic, id=topic_id)
 
-    if topic.owner != request.user:
-        raise django.http.Http404
+    check_topic_owner(topic, request)
 
     if request.method != "POST":
         # No data submitted; create a blank form.
@@ -85,8 +92,7 @@ def edit_entry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
 
-    if topic.owner != request.user:
-        raise django.http.Http404
+    check_topic_owner(topic, request)
 
     if request.method != "POST":
         # Initial request; pre-fill form with the current entry.
