@@ -1,6 +1,6 @@
-from django.contrib.auth import login, logout, authenticate
-from django.shortcuts import redirect, render
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import redirect, render
 
 
 # Create your views here.
