@@ -56,6 +56,9 @@ def new_entry(request, topic_id):
     """Add a new entry for a particular topic."""
     topic = get_object_or_404(Topic, id=topic_id)
 
+    if topic.owner != request.user:
+        raise django.http.Http404
+
     if request.method != "POST":
         # No data submitted; create a blank form.
         form = EntryForm()
@@ -81,6 +84,9 @@ def edit_entry(request, entry_id):
     """Edit an existing entry."""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+
+    if topic.owner != request.user:
+        raise django.http.Http404
 
     if request.method != "POST":
         # Initial request; pre-fill form with the current entry.
