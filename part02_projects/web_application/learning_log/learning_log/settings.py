@@ -128,3 +128,6 @@ MAILERS = {
         "BACKEND": "django.core.mail.backends.console.EmailBackend",
     },
 }
+
+# My settings
+LOGIN_URL = "/users/login/"
