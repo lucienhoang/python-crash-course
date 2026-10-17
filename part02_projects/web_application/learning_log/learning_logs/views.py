@@ -1,3 +1,4 @@
+import django.http
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
@@ -25,6 +26,9 @@ def topic(request, topic_id):
     topic = get_object_or_404(
         Topic, id=topic_id
     )  # lấy object Topic từ database (đã có sẵn field id)
+    # Make sure the topic belongs to the current user.
+    if topic.owner != request.user:
+        raise django.http.Http404
     entries = topic.entry_set.order_by("-date_added")
     context = {"topic": topic, "entries": entries}  # đóng gói gửi qua template
     return render(request, "learning_logs/topic.html", context)
