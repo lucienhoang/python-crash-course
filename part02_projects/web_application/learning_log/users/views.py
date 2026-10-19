@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect, render
+
+from .forms import RegisterForm
 
 
 # Create your views here.
@@ -14,10 +15,10 @@ def register(request):
     """Register a new User."""
     if request.method != "POST":
         # Display blank registration form.
-        form = UserCreationForm()
+        form = RegisterForm()
     else:
         # Process completed form.
-        form = UserCreationForm(data=request.POST)
+        form = RegisterForm(data=request.POST)
 
         if form.is_valid():
             new_user = form.save()

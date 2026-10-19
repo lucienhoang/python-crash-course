@@ -1,14 +1,30 @@
-<!-- prettier-ignore -->
-{% extends "learning_logs/base.html" %} 
+{% extends "learning_logs/base.html" %} {% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-5">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h1 class="h3 mb-4 text-center">Create an account</h1>
 
-{% block content %}
+        <form method="post" action="{% url 'users:register' %}">
+          {% csrf_token %} {% for field in form %}
+          <div class="mb-3">
+            <label class="form-label" for="{{ field.id_for_label }}"
+              >{{ field.label }}</label
+            >
+            {{ field }} {% for error in field.errors %}
+            <div class="text-danger small mt-1">{{ error }}</div>
+            {% endfor %}
+          </div>
+          {% endfor %}
 
-<form method="POST" action="{% url 'users:register' %}">
-  {% csrf_token %} {{form.as_p}}
+          <button class="btn btn-primary w-100" name="submit">Register</button>
+        </form>
 
-  <button name="submit">register</button>
-
-  <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
-</form>
-
+        <p class="text-center text-body-secondary mt-3 mb-0">
+          Already have an account? <a href="{% url 'users:login' %}">Log in</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}

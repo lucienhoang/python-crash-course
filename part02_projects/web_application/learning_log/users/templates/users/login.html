@@ -1,15 +1,39 @@
 {% extends "learning_logs/base.html" %} {% block content %}
-<!-- prettier-ignore -->
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-5">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h1 class="h3 mb-4 text-center">Log in</h1>
 
-<form method="POST" action="{% url 'users:login' %}">
-  {% csrf_token %} {{form.as_p}}
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+          Your username and password didn't match. Please try again.
+        </div>
+        {% endif %}
 
-  <button name="submit">log in</button>
+        <form method="post" action="{% url 'users:login' %}">
+          {% csrf_token %} {% for field in form %}
+          <div class="mb-3">
+            <label class="form-label" for="{{ field.id_for_label }}"
+              >{{ field.label }}</label
+            >
+            {{ field }}
+          </div>
+          {% endfor %}
 
-  <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
-</form>
+          <input
+            type="hidden"
+            name="next"
+            value="{% url 'learning_logs:index' %}"
+          />
+          <button class="btn btn-primary w-100" name="submit">Log in</button>
+        </form>
 
+        <p class="text-center text-body-secondary mt-3 mb-0">
+          No account yet? <a href="{% url 'users:register' %}">Register</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
