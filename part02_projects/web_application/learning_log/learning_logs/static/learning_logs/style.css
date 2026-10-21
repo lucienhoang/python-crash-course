@@ -1,0 +1,163 @@
+:root {
+  --ll-bg: #faf8f6;
+  --ll-ink: #2d2b36;
+  --ll-muted: #7a7685;
+  --ll-lavender: #8d84b8;
+  --ll-lavender-dark: #6f6699;
+  --ll-rose: #d8a7b1;
+  --ll-line: #ece7e4;
+}
+
+body {
+  background: var(--ll-bg);
+  color: var(--ll-ink);
+}
+
+/* Ký hiệu ♎ ở navbar */
+.ll-mark {
+  color: var(--ll-rose);
+  margin-right: 0.35rem;
+}
+
+/* Nút chính tông tím oải hương */
+.btn-libra {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--ll-lavender);
+  --bs-btn-border-color: var(--ll-lavender);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--ll-lavender-dark);
+  --bs-btn-hover-border-color: var(--ll-lavender-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--ll-lavender-dark);
+  --bs-btn-active-border-color: var(--ll-lavender-dark);
+  border-radius: 999px;
+  padding-inline: 1.25rem;
+}
+
+/* Nút phụ viền mảnh */
+.btn-libra-outline {
+  --bs-btn-color: var(--ll-lavender-dark);
+  --bs-btn-border-color: var(--ll-lavender);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--ll-lavender);
+  --bs-btn-hover-border-color: var(--ll-lavender);
+  border-radius: 999px;
+}
+
+/* Thẻ nội dung */
+.ll-card {
+  background: #fff;
+  border: 1px solid var(--ll-line);
+  border-radius: 1rem;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+a.ll-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(141, 132, 184, 0.15);
+}
+
+/* Entry: vạch hồng bên trái như một dòng nhật ký */
+.ll-entry {
+  border-left: 3px solid var(--ll-rose);
+}
+
+/* Đường kẻ "cán cân": vạch - biểu tượng - vạch */
+.ll-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--ll-rose);
+  margin: 2.5rem 0 1rem;
+}
+.ll-divider::before,
+.ll-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--ll-line);
+}
+
+.ll-muted {
+  color: var(--ll-muted);
+}
+
+/* ===== Form & trang đăng nhập / đăng ký ===== */
+.form-control {
+  background: #fff;
+  border: 1px solid var(--ll-line);
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.9rem;
+}
+.form-control:focus {
+  border-color: var(--ll-lavender);
+  box-shadow: 0 0 0 0.2rem rgba(141, 132, 184, 0.2);
+}
+
+.form-label {
+  font-size: 0.85rem;
+  color: var(--ll-muted);
+  margin-bottom: 0.3rem;
+}
+
+.form-text,
+.form-text ul {
+  font-size: 0.78rem;
+  color: var(--ll-muted);
+}
+.form-text ul {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0 0;
+}
+
+/* Hộp thông báo lỗi dịu mắt */
+.ll-alert {
+  background: #fbeff1;
+  border: 1px solid var(--ll-rose);
+  color: #8a4b57;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  padding: 0.65rem 0.9rem;
+}
+
+.ll-field-error {
+  color: #b05a69;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+/* Link tím trong nội dung */
+.ll-link {
+  color: var(--ll-lavender-dark);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ll-rose);
+}
+.ll-link:hover {
+  color: var(--ll-lavender);
+}
+
+/* Khung đăng nhập / đăng ký */
+.ll-auth {
+  max-width: 26rem;
+  margin: 2rem auto 0;
+}
+
+/* ===== Trang form (new_topic, new_entry, edit_entry) ===== */
+.ll-form {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+textarea.form-control {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.ll-cancel {
+  color: var(--ll-muted);
+  text-decoration: none;
+}
+.ll-cancel:hover {
+  color: var(--ll-lavender-dark);
+}

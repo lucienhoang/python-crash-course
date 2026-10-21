@@ -1,39 +1,39 @@
 {% extends "learning_logs/base.html" %} {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-6 col-lg-5">
-    <div class="card shadow-sm">
-      <div class="card-body p-4">
-        <h1 class="h3 mb-4 text-center">Log in</h1>
-
-        {% if form.errors %}
-        <div class="alert alert-danger" role="alert">
-          Your username and password didn't match. Please try again.
-        </div>
-        {% endif %}
-
-        <form method="post" action="{% url 'users:login' %}">
-          {% csrf_token %} {% for field in form %}
-          <div class="mb-3">
-            <label class="form-label" for="{{ field.id_for_label }}"
-              >{{ field.label }}</label
-            >
-            {{ field }}
-          </div>
-          {% endfor %}
-
-          <input
-            type="hidden"
-            name="next"
-            value="{% url 'learning_logs:index' %}"
-          />
-          <button class="btn btn-primary w-100" name="submit">Log in</button>
-        </form>
-
-        <p class="text-center text-body-secondary mt-3 mb-0">
-          No account yet? <a href="{% url 'users:register' %}">Register</a>
-        </p>
-      </div>
+<div class="ll-auth">
+  <div class="ll-card p-4 p-md-5">
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-1">Welcome back</h1>
+      <p class="ll-muted small mb-0">Log in to continue your notebook.</p>
     </div>
+
+    {% if form.errors %}
+    <div class="ll-alert mb-3" role="alert">
+      Incorrect username or password. Please try again.
+    </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'users:login' %}">
+      {% csrf_token %} {% for field in form %}
+      <div class="mb-3">
+        <label class="form-label" for="{{ field.id_for_label }}"
+          >{{ field.label }}</label
+        >
+        {{ field }}
+      </div>
+      {% endfor %}
+
+      <input
+        type="hidden"
+        name="next"
+        value="{% url 'learning_logs:index' %}"
+      />
+      <button class="btn btn-libra w-100 mt-2" name="submit">Log in</button>
+    </form>
+
+    <p class="text-center ll-muted small mt-4 mb-0">
+      No account yet?
+      <a class="ll-link" href="{% url 'users:register' %}">Register</a>
+    </p>
   </div>
 </div>
 {% endblock content %}

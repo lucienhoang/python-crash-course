@@ -1,10 +1,35 @@
-{% extends "learning_logs/base.html" %} {% block content %}
+{% extends "learning_logs/base.html" %} {% block page_header %}
+<div class="ll-form">
+  <a
+    class="ll-muted small text-decoration-none"
+    href="{% url 'learning_logs:topics' %}"
+  >
+    <i class="bi bi-arrow-left me-1"></i>All topics
+  </a>
+  <h1 class="h2 mt-2 mb-1">New topic</h1>
+  <p class="ll-muted mb-4">Give a new shelf in your notebook a name.</p>
+</div>
+{% endblock page_header %} {% block content %}
+<div class="ll-form">
+  <div class="ll-card p-4">
+    <form action="{% url 'learning_logs:new_topic' %}" method="post">
+      {% csrf_token %} {% for field in form %}
+      <div class="mb-3">
+        {{ field }} {% for error in field.errors %}
+        <div class="ll-field-error">{{ error }}</div>
+        {% endfor %}
+      </div>
+      {% endfor %}
 
-<p>Add a new topic:</p>
-
-<form action="{% url 'learning_logs:new_topic' %}" method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button name="submit">add topic</button>
-</form>
-
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-libra" name="submit">
+          <i class="bi bi-plus-lg me-1"></i>Add topic
+        </button>
+        <a class="ll-cancel small" href="{% url 'learning_logs:topics' %}"
+          >Cancel</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock content %}

@@ -1,34 +1,45 @@
 {% extends "learning_logs/base.html" %} {% block page_header %}
-<div class="p-5 mb-4 bg-body-tertiary rounded-3">
-  <h1 class="display-4 fw-bold">Track your learning.</h1>
-  <p class="fs-5 text-body-secondary">
+<section class="ll-card p-5 mb-5 text-center">
+  <h1 class="display-5 fw-semibold mb-3">Track your learning.</h1>
+  <p class="fs-5 ll-muted mx-auto mb-4" style="max-width: 36rem">
     Keep a journal of everything you learn, one topic at a time.
   </p>
   {% if not user.is_authenticated %}
-  <a class="btn btn-primary btn-lg me-2" href="{% url 'users:register' %}"
+  <a class="btn btn-libra btn-lg me-2" href="{% url 'users:register' %}"
     >Register</a
   >
-  <a class="btn btn-outline-secondary btn-lg" href="{% url 'users:login' %}"
+  <a class="btn btn-libra-outline btn-lg" href="{% url 'users:login' %}"
     >Log in</a
   >
   {% else %}
-  <a class="btn btn-primary btn-lg" href="{% url 'learning_logs:topics' %}"
+  <a class="btn btn-libra btn-lg" href="{% url 'learning_logs:topics' %}"
     >Go to my topics</a
   >
   {% endif %}
-</div>
+</section>
 {% endblock page_header %} {% block content %}
-<div class="row g-4">
+<div class="row g-3">
   <div class="col-md-6">
-    <h2 class="h4">Make your own Learning Log</h2>
-    <p>List the topics you're learning about and add entries as you go.</p>
+    <div class="ll-card p-4 h-100">
+      <h2 class="h5">
+        <i class="bi bi-journal-bookmark ll-mark me-2"></i>Make your own
+        Learning Log
+      </h2>
+      <p class="ll-muted mb-0">
+        List the topics you're learning about and add entries as you go.
+      </p>
+    </div>
   </div>
   <div class="col-md-6">
-    <h2 class="h4">Look back anytime</h2>
-    <p>
-      Whenever you learn something new, write it down. Each entry is saved with
-      its date, so you can see your progress over time.
-    </p>
+    <div class="ll-card p-4 h-100">
+      <h2 class="h5">
+        <i class="bi bi-clock-history ll-mark me-2"></i>Look back anytime
+      </h2>
+      <p class="ll-muted mb-0">
+        Each entry is saved with its date, so you can see your progress over
+        time.
+      </p>
+    </div>
   </div>
 </div>
 {% endblock content %}

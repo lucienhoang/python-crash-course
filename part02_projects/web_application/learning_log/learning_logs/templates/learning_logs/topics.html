@@ -1,22 +1,37 @@
-{% extends "learning_logs/base.html" %}
-<p>Learning Log</p>
-
-{% block content %}
-
-<p>Topics</p>
-
-<ul>
-  {# views.topics() truyền context = {'topics': topics}, nên ở đây dùng được biến `topics` #}
-  {# Mỗi vòng lặp, `topic` là 1 object Topic lấy từ database (Topic.objects.order_by('date_added')) #}
+{% extends "learning_logs/base.html" %} {% block page_header %}
+<div
+  class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4"
+>
+  <div>
+    <h1 class="h2 mb-1">Topics</h1>
+    <p class="ll-muted mb-0">Each topic is a shelf in your notebook.</p>
+  </div>
+  <a class="btn btn-libra" href="{% url 'learning_logs:new_topic' %}">
+    <i class="bi bi-plus-lg me-1"></i>New topic
+  </a>
+</div>
+{% endblock page_header %} {% block content %}
+<div class="row g-3">
   {% for topic in topics %}
-  {# topic.id: Django tự thêm field `id` (khóa chính, tự tăng) cho mọi model, không cần khai báo trong models.py #}
-  {# topic.id được truyền vào <int:topic_id> trong path("topics/<int:topic_id>/", ...) → ra link dạng /topics/3/ #}
-  <li><a href="{% url 'learning_logs:topic' topic.id %}">{{topic.text}}</a></li>
+  <div class="col-md-6">
+    <a
+      class="ll-card d-block p-4 text-decoration-none text-reset h-100"
+      href="{% url 'learning_logs:topic' topic.id %}"
+    >
+      <h2 class="h5 mb-2">{{ topic.text }}</h2>
+      <span class="ll-muted small">
+        <i class="bi bi-journal-text me-1"></i>{{ topic.entry_set.count }}
+        entries
+      </span>
+    </a>
+  </div>
   {% empty %}
-  <li>No topics have been added yet.</li>
+  <div class="col-12">
+    <div class="ll-card p-5 text-center ll-muted">
+      <div class="fs-1 ll-mark">♎</div>
+      <p class="mb-0">No topics yet. Start with your first one.</p>
+    </div>
+  </div>
   {% endfor %}
-</ul>
-
-<a href="{% url 'learning_logs:new_topic' %}">Add a new topic:</a>
-
+</div>
 {% endblock content %}

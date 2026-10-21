@@ -1,26 +1,36 @@
-{% extends "learning_logs/base.html" %}
-<p>Learning Log</p>
-
-{% block content %}
-
-<p>Topics: {{ topic }}</p>
-
-<p>Entries:</p>
-
-<p><a href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</a></p>
-
-<ul>
-  {% for entry in entries %}
-  <li>
-    <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
-    <p>{{ entry.text|linebreaks}}</p>
-    <p>
-      <a href="{% url 'learning_logs:edit_entry' entry.id %}">edit entry</a>
-    </p>
-  </li>
-  {% empty %}
-  <li>There are no entries for this topic yet.</li>
-  {% endfor %}
-</ul>
-
-{% endblock content %}
+{% extends "learning_logs/base.html" %} {% block page_header %}
+<a
+  class="ll-muted small text-decoration-none"
+  href="{% url 'learning_logs:topics' %}"
+>
+  <i class="bi bi-arrow-left me-1"></i>All topics
+</a>
+<div
+  class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-2 mb-4"
+>
+  <h1 class="h2 mb-0">{{ topic.text }}</h1>
+  <a class="btn btn-libra" href="{% url 'learning_logs:new_entry' topic.id %}">
+    <i class="bi bi-pencil me-1"></i>Add entry
+  </a>
+</div>
+{% endblock page_header %} {% block content %} {% for entry in entries %}
+<article class="ll-card ll-entry p-4 mb-3">
+  <div class="d-flex justify-content-between align-items-start gap-3 mb-2">
+    <span class="ll-muted small">
+      <i class="bi bi-calendar3 me-1"></i>
+      {{ entry.date_added|date:'M d, Y H:i'}}
+    </span>
+    <a
+      class="btn btn-sm btn-libra-outline"
+      href="{% url 'learning_logs:edit_entry' entry.id %}"
+      >Edit</a
+    >
+  </div>
+  <div>{{ entry.text|linebreaks }}</div>
+</article>
+{% empty %}
+<div class="ll-card p-5 text-center ll-muted">
+  <div class="fs-1 ll-mark">⚖</div>
+  <p class="mb-0">No entries in this topic yet.</p>
+</div>
+{% endfor %} {% endblock content %}
