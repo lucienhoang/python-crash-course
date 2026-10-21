@@ -1,0 +1,36 @@
+{% extends "learning_logs/base.html" %} {% block page_header %}
+<div class="ll-form">
+  <a
+    class="ll-muted small text-decoration-none"
+    href="{% url 'learning_logs:topic' topic.id %}"
+  >
+    <i class="bi bi-arrow-left me-1"></i>{{ topic.text }}
+  </a>
+  <h1 class="h2 mt-2 mb-4">Rename topic</h1>
+</div>
+{% endblock page_header %} {% block content %}
+<div class="ll-form">
+  <div class="ll-card p-4">
+    <form action="{% url 'learning_logs:edit_topic' topic.id %}" method="post">
+      {% csrf_token %} {% for field in form %}
+      <div class="mb-3">
+        {{ field }} {% for error in field.errors %}
+        <div class="ll-field-error">{{ error }}</div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-libra" name="submit">
+          <i class="bi bi-check2 me-1"></i>Save changes
+        </button>
+        <a
+          class="ll-cancel small"
+          href="{% url 'learning_logs:topic' topic.id %}"
+          >Cancel</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

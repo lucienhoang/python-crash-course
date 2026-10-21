@@ -11,6 +11,13 @@
   <h1 class="h2 mb-0">{{ topic.text }}</h1>
   <div class="d-flex align-items-center gap-2">
     <a
+      class="btn btn-libra-outline"
+      href="{% url 'learning_logs:edit_topic' topic.id %}"
+      title="Rename topic"
+    >
+      <i class="bi bi-pencil-square"></i>
+    </a>
+    <a
       class="btn btn-libra-outline-danger"
       href="{% url 'learning_logs:delete_topic' topic.id %}"
       title="Delete topic"

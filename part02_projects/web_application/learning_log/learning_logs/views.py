@@ -60,6 +60,28 @@ def new_topic(request):
 
 
 @login_required
+def edit_topic(request, topic_id):
+    """Edit an existing entry."""
+    topic = get_object_or_404(Topic, id=topic_id)
+
+    check_topic_owner(topic, request)
+
+    if request.method != "POST":
+        # Initial request; pre-fill form with the current entry.
+        form = EntryForm(instance=topic)
+    else:
+        # POST data submitted; process data.
+        form = EntryForm(instance=topic, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(
+                "learning_logs:topic", topic_id=topic.id
+            )  # quay về trang topic
+    context = {"topic": topic, "form": form}
+    return render(request, "learning_logs/edit_topic.html", context)
+
+
+@login_required
 def new_entry(request, topic_id):
     """Add a new entry for a particular topic."""
     topic = get_object_or_404(Topic, id=topic_id)
