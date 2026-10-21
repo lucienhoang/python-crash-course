@@ -2,7 +2,7 @@
 <div class="ll-form">
   <a
     class="ll-muted small text-decoration-none"
-    href="{% url 'learning_logs:topic' topic.id %}"
+    href="{% url 'learning_logs:topics' %}"
   >
     <i class="bi bi-arrow-left me-1"></i>{{ topic.text }}
   </a>
@@ -28,9 +28,7 @@
         <button class="btn btn-libra-danger" name="submit">
           <i class="bi bi-trash me-1"></i>Yes, delete
         </button>
-        <a
-          class="ll-cancel small"
-          href="{% url 'learning_logs:topic' topic.id %}"
+        <a class="ll-cancel small" href="{% url 'learning_logs:topics' %}"
           >Cancel</a
         >
       </div>

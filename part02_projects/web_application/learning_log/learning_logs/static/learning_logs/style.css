@@ -184,3 +184,112 @@ textarea.form-control {
   --bs-btn-hover-border-color: #c0707f;
   border-radius: 999px;
 }
+
+/* ===== Trang topics ===== */
+
+.ll-topic {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.ll-topic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(141, 132, 184, 0.15);
+}
+
+/* ===== Homepage (Gen Z, airy) ===== */
+:root {
+  --ll-pink: #ec6b8e;
+  --ll-mint: #bfeee9;
+  --ll-shape: #f1eefb;
+}
+
+.ll-display {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.ll-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0 3rem;
+}
+.ll-hero > .row {
+  position: relative;
+  z-index: 1;
+}
+
+.ll-hero-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  color: var(--ll-lavender-dark);
+}
+
+/* Hình khối pastel làm nền */
+.ll-shape {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--ll-shape);
+}
+.ll-shape-blob {
+  width: 120px;
+  height: 75px;
+  border-radius: 60% 40% 55% 45%;
+  top: 1rem;
+  left: 2%;
+}
+.ll-shape-tri {
+  width: 90px;
+  height: 90px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  top: 38%;
+  right: 33%;
+}
+.ll-shape-ring {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: transparent;
+  border: 36px solid var(--ll-shape);
+  bottom: -70px;
+  left: 28%;
+}
+
+/* Vòng tròn bên phải */
+.ll-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 8px solid var(--ll-mint);
+  background: linear-gradient(135deg, var(--ll-lavender), var(--ll-rose));
+  display: grid;
+  place-items: center;
+  font-size: 5rem;
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(141, 132, 184, 0.25);
+}
+
+/* Chip nhỏ */
+.ll-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fff;
+  border: 1px solid var(--ll-line);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.85rem;
+  color: var(--ll-muted);
+}
+
+.ll-feature h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.35rem;
+}
+
+img.ll-avatar {
+  object-fit: cover;
+  background: #fff;
+}

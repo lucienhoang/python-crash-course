@@ -1,45 +1,69 @@
-{% extends "learning_logs/base.html" %} {% block page_header %}
-<section class="ll-card p-5 mb-5 text-center">
-  <h1 class="display-5 fw-semibold mb-3">Track your learning.</h1>
-  <p class="fs-5 ll-muted mx-auto mb-4" style="max-width: 36rem">
-    Keep a journal of everything you learn, one topic at a time.
-  </p>
-  {% if not user.is_authenticated %}
-  <a class="btn btn-libra btn-lg me-2" href="{% url 'users:register' %}"
-    >Register</a
-  >
-  <a class="btn btn-libra-outline btn-lg" href="{% url 'users:login' %}"
-    >Log in</a
-  >
-  {% else %}
-  <a class="btn btn-libra btn-lg" href="{% url 'learning_logs:topics' %}"
-    >Go to my topics</a
-  >
-  {% endif %}
-</section>
-{% endblock page_header %} {% block content %}
-<div class="row g-3">
-  <div class="col-md-6">
-    <div class="ll-card p-4 h-100">
-      <h2 class="h5">
-        <i class="bi bi-journal-bookmark ll-mark me-2"></i>Make your own
-        Learning Log
-      </h2>
-      <p class="ll-muted mb-0">
-        List the topics you're learning about and add entries as you go.
+{% extends "learning_logs/base.html" %} {% load static %} {% block page_header%}
+<section class="ll-hero">
+  <span class="ll-shape ll-shape-blob"></span>
+  <span class="ll-shape ll-shape-tri"></span>
+  <span class="ll-shape ll-shape-ring"></span>
+
+  <div class="row align-items-center g-5">
+    <div class="col-md-8 col-lg-7 offset-lg-1">
+      {% if user.is_authenticated %}
+      <h1 class="ll-hero-title mb-3">
+        Hey {{ user.username }}! What did you learn today?
+      </h1>
+      {% else %}
+      <h1 class="ll-hero-title mb-3">
+        Hi there! 📓 Track what you learn, one topic at a time ✨
+      </h1>
+      {% endif %}
+
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <span class="ll-chip">📚 Topics</span>
+        <span class="ll-chip">✍️ Entries</span>
+        <span class="ll-chip">🌱 Progress</span>
+      </div>
+
+      <p class="fs-5 mb-4" style="max-width: 34rem">
+        Learning Log is a tiny notebook for the things you're curious about.
+        Make a topic, jot down what you learn, and look back whenever you want
+        to see how far you've come.
       </p>
+
+      {% if user.is_authenticated %}
+      <a class="btn btn-libra btn-lg" href="{% url 'learning_logs:topics' %}"
+        >Go to my topics</a
+      >
+      {% else %}
+      <a class="btn btn-libra btn-lg me-2" href="{% url 'users:register' %}"
+        >Get started</a
+      >
+      <a class="btn btn-libra-outline btn-lg" href="{% url 'users:login' %}"
+        >Log in</a
+      >
+      {% endif %}
+    </div>
+
+    <div class="col-md-4 d-none d-md-flex justify-content-center">
+      <img
+        src="{% static 'learning_logs/images/icon.png' %}"
+        alt="Learning Log icon"
+        class="ll-avatar"
+      />
     </div>
   </div>
-  <div class="col-md-6">
-    <div class="ll-card p-4 h-100">
-      <h2 class="h5">
-        <i class="bi bi-clock-history ll-mark me-2"></i>Look back anytime
-      </h2>
-      <p class="ll-muted mb-0">
-        Each entry is saved with its date, so you can see your progress over
-        time.
-      </p>
-    </div>
+</section>
+{% endblock page_header %} {% block content %}
+<div class="row g-5 mt-2 ll-feature">
+  <div class="col-md-6 col-lg-5 offset-lg-1">
+    <h2>🗂️ Make your own Learning Log</h2>
+    <p class="ll-muted mb-0">
+      List the topics you're learning about and add entries as you go.
+    </p>
+  </div>
+  <div class="col-md-6 col-lg-5">
+    <h2>⏳ Look back anytime</h2>
+    <p class="ll-muted mb-0">
+      Each entry is saved with its date, so you can see your progress over time.
+    </p>
   </div>
 </div>
 {% endblock content %}

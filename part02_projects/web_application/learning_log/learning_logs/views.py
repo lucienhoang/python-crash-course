@@ -74,9 +74,7 @@ def edit_topic(request, topic_id):
         form = EntryForm(instance=topic, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect(
-                "learning_logs:topic", topic_id=topic.id
-            )  # quay về trang topic
+            return redirect("learning_logs:topics")  # quay về trang topics
     context = {"topic": topic, "form": form}
     return render(request, "learning_logs/edit_topic.html", context)
 

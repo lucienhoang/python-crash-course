@@ -9,28 +9,9 @@
   class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-2 mb-4"
 >
   <h1 class="h2 mb-0">{{ topic.text }}</h1>
-  <div class="d-flex align-items-center gap-2">
-    <a
-      class="btn btn-libra-outline"
-      href="{% url 'learning_logs:edit_topic' topic.id %}"
-      title="Rename topic"
-    >
-      <i class="bi bi-pencil-square"></i>
-    </a>
-    <a
-      class="btn btn-libra-outline-danger"
-      href="{% url 'learning_logs:delete_topic' topic.id %}"
-      title="Delete topic"
-    >
-      <i class="bi bi-trash"></i>
-    </a>
-    <a
-      class="btn btn-libra"
-      href="{% url 'learning_logs:new_entry' topic.id %}"
-    >
-      <i class="bi bi-pencil me-1"></i>Add entry
-    </a>
-  </div>
+  <a class="btn btn-libra" href="{% url 'learning_logs:new_entry' topic.id %}">
+    <i class="bi bi-pencil me-1"></i>Add entry
+  </a>
 </div>
 {% endblock page_header %} {% block content %} {% for entry in entries %}
 <article class="ll-card ll-entry p-4 mb-3">

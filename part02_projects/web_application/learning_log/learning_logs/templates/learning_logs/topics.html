@@ -14,16 +14,40 @@
 <div class="row g-3">
   {% for topic in topics %}
   <div class="col-md-6">
-    <a
-      class="ll-card d-block p-4 text-decoration-none text-reset h-100"
-      href="{% url 'learning_logs:topic' topic.id %}"
-    >
-      <h2 class="h5 mb-2">{{ topic.text }}</h2>
-      <span class="ll-muted small">
-        <i class="bi bi-journal-text me-1"></i>{{ topic.entry_set.count }}
-        entries
-      </span>
-    </a>
+    <div class="ll-card ll-topic position-relative p-4 h-100">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <h2 class="h5 mb-2">
+            <a
+              class="stretched-link text-decoration-none text-reset"
+              href="{% url 'learning_logs:topic' topic.id %}"
+              >{{ topic.text }}</a
+            >
+          </h2>
+          <span class="ll-muted small">
+            <i class="bi bi-journal-text me-1"></i>{{ topic.entry_set.count }}
+            entr{{ topic.entry_set.count|pluralize:"y,ies" }}
+          </span>
+        </div>
+
+        <div class="d-flex gap-1 position-relative" style="z-index: 2">
+          <a
+            class="btn btn-sm btn-libra-outline"
+            href="{% url 'learning_logs:edit_topic' topic.id %}"
+            title="Rename topic"
+          >
+            <i class="bi bi-pencil-square"></i>
+          </a>
+          <a
+            class="btn btn-sm btn-libra-outline-danger"
+            href="{% url 'learning_logs:delete_topic' topic.id %}"
+            title="Delete topic"
+          >
+            <i class="bi bi-trash"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
   {% empty %}
   <div class="col-12">
