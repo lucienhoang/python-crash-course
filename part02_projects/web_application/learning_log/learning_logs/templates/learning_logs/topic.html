@@ -32,11 +32,20 @@
       <i class="bi bi-calendar3 me-1"></i>
       {{ entry.date_added|date:'M d, Y H:i'}}
     </span>
-    <a
-      class="btn btn-sm btn-libra-outline"
-      href="{% url 'learning_logs:edit_entry' entry.id %}"
-      >Edit</a
-    >
+    <div class="d-flex gap-2">
+      <a
+        class="btn btn-sm btn-libra-outline"
+        href="{% url 'learning_logs:edit_entry' entry.id %}"
+        >Edit</a
+      >
+      <a
+        class="btn btn-sm btn-libra-outline-danger"
+        href="{% url 'learning_logs:delete_entry' entry.id %}"
+        title="Delete entry"
+      >
+        <i class="bi bi-trash"></i>
+      </a>
+    </div>
   </div>
   <div>{{ entry.text|linebreaks }}</div>
 </article>
