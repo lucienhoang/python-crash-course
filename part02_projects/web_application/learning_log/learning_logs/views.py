@@ -107,3 +107,17 @@ def edit_entry(request, entry_id):
             )  # quay về trang topic
     context = {"entry": entry, "topic": topic, "form": form}
     return render(request, "learning_logs/edit_entry.html", context)
+
+
+@login_required
+def delete_topic(request, topic_id):
+    """Confirm and delete a topic."""
+    topic = get_object_or_404(Topic, id=topic_id)
+    check_topic_owner(topic, request)
+
+    if request.method == "POST":
+        topic.delete()
+        return redirect("learning_logs:topics")
+
+    context = {"topic": topic}
+    return render(request, "learning_logs/delete_topic.html", context)

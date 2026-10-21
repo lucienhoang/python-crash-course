@@ -161,3 +161,26 @@ textarea.form-control {
 .ll-cancel:hover {
   color: var(--ll-lavender-dark);
 }
+
+.btn-libra-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #c0707f;
+  --bs-btn-border-color: #c0707f;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #a85a69;
+  --bs-btn-hover-border-color: #a85a69;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #a85a69;
+  --bs-btn-active-border-color: #a85a69;
+  border-radius: 999px;
+  padding-inline: 1.25rem;
+}
+
+.btn-libra-outline-danger {
+  --bs-btn-color: #b05a69;
+  --bs-btn-border-color: var(--ll-rose);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #c0707f;
+  --bs-btn-hover-border-color: #c0707f;
+  border-radius: 999px;
+}
